@@ -87,27 +87,6 @@ if user_option == 'Check Flights':
             st.info("ℹ️ No flights found for this route.")
             st.stop()
 
-        #FASTEST FLIGHT
-        fastest = db.fastest_flight(source, destination)
-        if fastest:
-            airline_f, duration = fastest
-            st.markdown(
-                f"""
-                <div style="
-                    background: rgba(30, 64, 175, 0.92);
-                    color: white;
-                    padding: 14px 20px;
-                    border-radius: 12px;
-                    font-size: 16px;
-                    font-weight: 600;
-                    margin-top: 15px;
-                ">
-                    ⚡ Fastest Flight: <b>{airline_f}</b> – {duration}
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
-
         #CHEAPEST FLIGHT
         cheap = db.cheapest_flight(source, destination)
         if cheap:
