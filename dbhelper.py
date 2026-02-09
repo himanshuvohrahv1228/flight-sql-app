@@ -120,13 +120,3 @@ class DB:
 
         return self.mycursor.fetchone()
 
-    def fastest_flight(self, source, destination):
-        self.mycursor.execute("""
-            SELECT Airline, Duration
-            FROM flights
-            WHERE Source=%s AND Destination=%s
-            ORDER BY Duration ASC
-            LIMIT 1
-        """, (source, destination))
-        return self.mycursor.fetchone()
-
